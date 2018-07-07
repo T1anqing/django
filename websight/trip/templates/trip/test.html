@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for contact in contacts %}
+    <li>{{ contact.title }}</li>
+
+    {# Each "contact" is a Contact model object. #}
+    <br />
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if contacts.has_previous %}
+            <a href="?page={{ contacts.previous_page_number }}" aria-label="previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        {% endif %}
+        <span class="current">
+            Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+        </span>
+
+        {% if contacts.has_next %}
+            <a href="?page={{ contacts.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+</body>
+</html>

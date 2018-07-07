@@ -1,0 +1,176 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free Bootstrap Themes by Html5xCss3 dot com - Free Responsive Html5 Templates">
+    <meta name="author" content="#">
+
+    <title>Vintage | Free Bootstrap Themes</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "sightcss/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+
+	<!-- Custom CSS -->
+	<link href="{% static "sightcss/style.css" %}" rel="stylesheet">
+	<!--<link rel="stylesheet" href="css/lightbox.css"-->
+
+	<!-- Custom Fonts -->
+    <link href="{% static "sightcss/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="{% static "sightjs/html5shiv.js" %}"></script>
+        <script src="{% static "sightjs/responds.min.js" %}"></script>
+    <![endif]-->
+</head>
+<body class="single-page">
+
+
+
+
+	<div class="wrap-body">
+		<!-- Intro -->
+		<div id="intro">
+			<span class="line-1">the</span>
+			<span class="line-2">Vintage</span>
+			<span class="line-3">typography experiment</span>
+			<span class="line-4"><a href="#">Archtext.js</a><a href="#">Codepen.io</a></span>
+		</div>
+
+
+
+		<!-- /////////////////////////////////////////Content -->
+		<div id="page-content" class="container">
+			<div class="row">
+				<!-----------------Content-------------------->
+				<article class="single-post">
+					<div class="wrap-post pd-exlarge-sm pd-small-xs"><!--Start Box-->
+						<div class="entry-header text-center">
+							<h1 class="entry-title">{{ Ctrip.title }}</h1>
+							<span class="entry-meta">
+								<ul class="list-inline link">
+									<li>By <a href="#">Admin</a></li>
+									<li><a href="#">{{ Ctrip.title_pinyin }}</a></li>
+
+								</ul>
+							</span>
+						</div>
+						<div class="post-thumbnail-wrap">
+							<div class="portfolio-box zoom-effect">
+								<img src="{{ Ctrip.image_urls }} " class="img-responsive" alt="" style="width: 990px;height: 660px">
+							</div>
+						</div>
+						<div class="entry-content">
+
+							<h2>Comment Numbers</h2>
+							<p>
+                                    <li><a href="#">携程&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ Ctrip.comment_nums }}</a></li><br/>
+                                {% for bb in Mafengwo %}
+                                    <li><a href="#">马蜂窝&nbsp;&nbsp;{{ bb.comment_nums }}</a></li>
+                                {% endfor %}
+                            </p>
+                            <p><h2>Keyword</h2>
+                            {% for bb in Mafengwo %}
+                                <li>{{ bb.comment_mains }}</li>
+                            {% endfor %}
+                            </p>
+                            <p><h2>Score</h2><li>{{ Ctrip.score }}</li></p>
+                            <p><h2>Place</h2><li>{{ Ctrip.place }}</li></p>
+                            <p><h2>Notice</h2><li>{{ Ctrip.notice }}</li></p>
+
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+		<footer id="page-footer" class="footer-contact">
+			<div class="wrap-footer container">
+				<div class="row">
+					<div class="flex-box no-gutter">
+						<!-- Map and address -->
+						<div class="col-lg-12">
+							<div class="contact-info">
+								<!-- Show Info Button -->
+								<a href="#" class="show-info-link"><i class="fa fa-info"></i> Show info</a>
+								<div id="map" style="height: 550px;"></div>
+								<address class="contact-info-wrapper">
+									<ul class="list-unstyled">
+										<!-- Address -->
+										<li class="contact-group">
+										  <span class="adr-heading">Address</span>
+										  <span class="adr-info">陕西省,西安市,长安区</span>
+										</li>
+										<!-- Email -->
+										<li class="contact-group">
+										  <span class="adr-heading">Email</span>
+										  <span class="adr-info">HelloWorld@email.com</span>
+										</li>
+									</ul>
+									<ul class="list-unstyled">
+										<!-- Phone -->
+										<li class="contact-group">
+										  <span class="adr-heading">Phone</span>
+										  <span class="adr-info">+ 123 4567 890</span>
+										</li>
+										<!-- Mobile -->
+										<li class="contact-group">
+										  <span class="adr-heading">Mobile</span>
+										  <span class="adr-info">+ 123 4567 890</span>
+										</li>
+									</ul>
+									<a href="#" class="show-map"><i class="fa fa-map-o"></i> Show on map</a>
+								</address>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom-footer">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-6">
+							<ul class="list-inline social-link">
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							</ul>
+						</div>
+						<div class="col-md-3">
+							<ul class="list-inline quicklinks">
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Terms of Use</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer><!-- Footer -->
+
+
+	</div><!-- .wrap-body -->
+
+
+	<!-- jQuery and Plugin-->
+	<script src="{% static "sightjs/jquery-3.2.1.min.js" %}"></script>
+	<script src="{% static "sightjs/main.js" %}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{% static "sightjs/bootstrap.min.js" %}"></script>
+	<!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7V-mAjEzzmP6PCQda8To0ZW_o3UOCVCE&callback=initMap" async defer></script>
+	<!-- Logo -->
+	<script src="{% static "sightjs/arctext.min.js" %}"></script>
+	<script>
+		$(document).ready(function() {
+		  $(".line-2").arctext({radius: 400});
+		});
+	</script>
+
+</body>
+</html>
